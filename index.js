@@ -14,7 +14,7 @@ const { UpdateRoi } = require('./config/updateRoi');
 const app = express();
 require('dotenv').config();
 const corsOptions = {
-    origin: ["https://tronlive.club", "http://localhost:3000"],
+    origin: ["https://bashar-tronlive.netlify.app", "http://localhost:3000"],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
@@ -36,7 +36,7 @@ UpdateRoi();
 
 // base API
 app.get('/', (req, res)=>{
-    res.header("Access-Control-Allow-Origin", "https://tronlive-club.herokuapp.com");
+    res.header("Access-Control-Allow-Origin", "https://bashar-tronlive.netlify.app");
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.send('Hello Client...!');
 
