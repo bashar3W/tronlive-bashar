@@ -507,7 +507,7 @@ const makeTopup = async (req, res) => {
     res.status(400).json({message: "Invalid user id"})
   }else{
     const user = await User.findOne({ user_id: user_id });
-    const existingWallet = await Wallet.findOne({ user_id: user.user_id });
+    const existingWallet = await Wallet.findOne({ user_id: user?.user_id });
   
     if (user && trx_password === user.trx_password) {
       const depositeBalance = parseInt(existingWallet.total_deposite);

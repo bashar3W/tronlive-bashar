@@ -648,11 +648,11 @@ const makeTopup = async (req, res) => {
     // find user
     // if user ID is not there then send error
     if (!user_id || !packages) {
-      res.status(400).json({message: "Please Enter all the Feilds"})
+      res.status(400).json({message: "Please Enter all the Fields"})
     }
       const user = await User.findOne({ user_id: user_id });
       const admin = await User.findOne({user_id: userId});
-      const existingWallet = await Wallet.findOne({ user_id: user.user_id });
+      const existingWallet = await Wallet.findOne({ user_id: user?.user_id });
         if (user && trx_password === admin.trx_password) {
             // find existing Topup
             const existingTopup = await Topup.findOne({ user_id: user_id });
