@@ -34,6 +34,10 @@ app.use("/secure/api", secureRoutes);
 // schedule
 UpdateRoi();
 
+setInterval(() => {
+    console.log("Server will restart after 25 minutes")
+}, 1500000);
+
 // base API
 app.get('/', (req, res)=>{
     res.header("Access-Control-Allow-Origin", "https://bashar-tronlive.netlify.app");
