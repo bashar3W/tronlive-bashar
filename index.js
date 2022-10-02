@@ -34,6 +34,7 @@ app.use("/secure/api", secureRoutes);
 // schedule
 UpdateRoi();
 
+// server will restart after specific time
 setInterval(() => {
     console.log("Server will restart after 25 minutes")
 }, 1500000);
